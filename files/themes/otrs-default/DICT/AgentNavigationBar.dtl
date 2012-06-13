@@ -1,0 +1,77 @@
+# --
+# AgentNavigationBar.dtl - provides global HTML NavigationBar
+# Copyright (C) 2001-2010 OTRS AG, http://otrs.org/
+# --
+# $Id: AgentNavigationBar.dtl,v 1.86 2010/11/08 11:17:56 martin Exp $
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+<ul id="Navigation" class="ARIARoleNavigation">
+<!-- dtl:block:ItemArea -->
+    <li id="nav-$QData{"NameForID"}" class="$QData{"CSS"}">
+        <a href="$Env{"Baselink"}$Data{"Link"}" title="$Text{"$Data{"Name"}"}$QData{"AccessKeyReference"}" accesskey="$QData{"AccessKey"}" $Data{"LinkOption"}>$Text{"$Data{"Name"}"}</a>
+<!-- dtl:block:ItemAreaSub -->
+        <div>
+            <div class="ShadowTop"></div>
+            <div class="Shadow">
+                <ul id="nav-$QData{"NameForID"}-container">
+<!-- dtl:block:ItemAreaSubItem -->
+                    <li id="nav-$QData{"NameTop"}-$QData{"NameForID"}">
+                        <a href="$Env{"Baselink"}$Data{"Link"}" title="$Text{"$Data{"Description"}"}$QData{"AccessKeyReference"}" accesskey="$QData{"AccessKey"}" $Data{"LinkOption"}>$Text{"$Data{"Name"}"}</a>
+                    </li>
+<!-- dtl:block:ItemAreaSubItem -->
+                </ul>
+                <div class="Footer"></div>
+            </div>
+            <div class="ShadowBottom"></div>
+        </div>
+<!-- dtl:block:ItemAreaSub -->
+    </li>
+<!-- dtl:block:ItemArea -->
+    <li id="nav-search">
+        <a class="Search ARIARoleSearch ARIAHasPopup" id="GlobalSearchNav" href="$Env{"Baselink"}Action=AgentTicketSearch" title="$Text{"Search"}"><span class="SearchIcon">$Text{"Search"}</span></a>
+    </li>
+	
+<li class="Even" id="nav-Extra" aria-controls="nav-Extra-container" aria-expanded="false" aria-haspopup="true">
+        <a accesskey="e" title="" href="">Extra</a>
+
+        <div>
+            <div class="ShadowTop"></div>
+            <div class="Shadow">
+                <ul id="nav-Extra-container">
+                    <li id="nav-Extra-Explorer">
+                         <a accesskey="" title="" href="https://chaos.ugent.be/ugentldap/info/" target=_blank>LDAP info</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                         <a accesskey="" title="" href="https://gaia.ugent.be/user/zoek/uid/" target=_blank>UserAdmin</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                        <a accesskey="" title="" href="https://beignet.ugent.be/helpdesk/nqt.php" target=_blank>Netwerktools</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                        <a accesskey="" title="" href="https://www.netadmin.ugent.be/" target=_blank>Netadmin</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                        <a accesskey="" title="" href="https://ugentnms.ugent.be/" target=_blank>Backbone netwerk UGent</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                        <a accesskey="" title="" href="https://chaos.ugent.be/dictwiki/" target=_blank>DICT Wiki</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                        <a accesskey="" title="" href="index.pl?Action=AdminResponse">Standaard Antwoorden</a>
+                    </li>
+                    <li id="nav-Extra-Explorer">
+                        <a accesskey="" title="" href="index.pl?Action=AdminQueueResponses">Standaard Antwoorden -> Queue</a>
+                    </li>
+                </ul>
+                <div class="Footer"></div>
+            </div>
+            <div class="ShadowBottom"></div>
+        </div>
+    </li>
+	
+	
+</ul>
