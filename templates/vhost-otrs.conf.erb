@@ -66,6 +66,11 @@ MaxRequestsPerChild 4000
           Order allow,deny
           Allow from all
       </Location>
+
+      # set mod_perl2 option for generic interface
+      <Location /otrs/nph-genericinterface.pl>
+          PerlOptions -ParseHeaders
+      </Location>
   
   </IfModule>
   
